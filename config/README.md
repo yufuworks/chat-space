@@ -12,6 +12,7 @@ user削除時の挙動、投稿済みのコメント（イメージ）は残し�
 |email|string|null: false|
 
 ### Association
+has_many :groups_users
 has_many :groups, through: :groups_users
 has_many :comments
 has_many :images
@@ -24,6 +25,7 @@ has_many :images
 |name|string|null: false, default: false|
 
 ### Association
+has_many :groups_users
 has_many :users, through: :groups_users
 
 ## groups_usersテーブル(class_name: members)
