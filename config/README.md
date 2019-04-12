@@ -15,7 +15,6 @@ user削除時の挙動、投稿済みのコメント（イメージ）は残し�
 has_many :groups_users
 has_many :groups, through: :groups_users
 has_many :comments
-has_many :images
 
 ## groupsテーブル
 
@@ -57,26 +56,10 @@ userを削除した時紐付けがどうなるのか。
 |------|----|-------|
 |id|integer|null: false|
 |comment|text|null: false|
-|image_id|int|null: ture|
+|image|string|null: ture|
 
 ### Association
-has_one :image
-
-
-## imagesテーブル
-
-<!-- 
-要gem
-Avatar?もしくは記事が出てくるCarrierWaveを試してみる？
- -->
-
-|Column|Type|Options|
-|------|----|-------|
-|id|integer|null: false|
-|image|string|null] false|
-
-### Association
-has_one :comment
+belongs_to :users
 
 ##Index
 <!-- 
