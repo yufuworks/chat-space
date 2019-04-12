@@ -40,9 +40,12 @@ belongs_to :user
 |id|integer|null: false|
 |comment|text|null: false|
 |image|string|null: ture|
+|group_id|int|null: false|
+|user_id|int|null: false|
 
 ### Association
 belongs_to :users
+belongs_to :groups
 
 ## Index
 
