@@ -1,10 +1,5 @@
 ## usersテーブル
-<!--
-groupsと多対多の関係
-TODO:
-user削除時の挙動、投稿済みのコメント（イメージ）は残してnull時のデフォルトname表示が必要？
-削除時のnull専用のuserを予め登録しておく？要調査だがひとまず保留、あとで修正対応かも。
- -->
+
 |Column|Type|Options|
 |------|----|-------|
 |id|ingeger|null: false|
