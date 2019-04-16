@@ -1,0 +1,15 @@
+current directory: /Users/yufu3683/OneDrive/練習ファイル/TechExpert/projects/chat-space/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+/Users/yufu3683/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20190416-21852-1mgluh0.rb extconf.rb
+creating Makefile
+
+current directory: /Users/yufu3683/OneDrive/練習ファイル/TechExpert/projects/chat-space/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/yufu3683/OneDrive/練習ファイル/TechExpert/projects/chat-space/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/cruby.bundle
+
+current directory: /Users/yufu3683/OneDrive/練習ファイル/TechExpert/projects/chat-space/vendor/bundle/ruby/2.5.0/gems/bindex-0.7.0/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190416-21852-14t3or1/skiptrace
