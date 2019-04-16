@@ -1,0 +1,39 @@
+%body
+  .anounce
+    %p グループを作成しました
+  %header
+    %p.header-title sumple group1
+    %p.header-caption member:user3,user2,user1
+    .header-bottun edit
+  %nav
+    .nav-top
+      %p#username user1
+      .nav-top__buttons
+        %a#new-group-button{href: "#"}
+          %img{src: "#", alt: "new-group-button-icon"}<
+        %a#account-edit-button{href: "#"}
+          %img{src: "#", alt: "account-edit-button-icon"}<
+    .nav-bottom
+      .nav-bottom__group
+        %p.nav-bottom__group__name sumple group1
+        %p.nav-bottom__group__status まだメッセージがありません
+      .nav-bottom__group
+        %p.nav-bottom__group__name sumple group2
+        %p.nav-bottom__group__status 画像が投稿されています
+  .main
+    .main__container
+      %p.main__container__username user2
+      %p.main__container__date 2019/04/10(Wed) 11:40:18
+      %p.main__container__message sumple chat
+  .main__container
+      %p.main__container__username user1
+      %p.main__container__date 2019/04/10(Wed) 11:54:33
+      %p.main__container__message sumple message
+  %footer
+    %form#message-form{action: "#", method: "post", enctype: "multipart/from-data"}
+      %input{type: "text", name: "message", value: "type a message"}
+      %label{for: "#file-upload"}
+        %img{src: "#", alt: "file-upload-button"}<
+      %input#file-upload{type: "file"}
+      %input{type: "submit", value: "Send"}
+    
