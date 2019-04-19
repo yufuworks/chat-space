@@ -13,7 +13,7 @@ nav {
       @include font-white;
       font-size: 16px;
     }
-    .nav-top__buttons {
+    &__buttons {
       display: flex;
       flex-direction: row-reverse;
       #new-group-button {
@@ -27,13 +27,13 @@ nav {
   .nav-bottom {
     justify-content: flex-start;
     background-color: $color-dblue;
-    .nav-bottom__group {
-      .nav-bottom__group__name {
+    &__group {
+      &__name {
         @include font-white;
         padding-top: 20px;
         font-size: 15px;
       }
-      .nav-bottom__group__status {
+      &__status {
         @include font-white;
         padding-top: 5px;
         padding-bottom: 40px;
