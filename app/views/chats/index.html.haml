@@ -1,0 +1,46 @@
+%body
+  .anounce
+    %p グループを作成しました。
+  .wrapper
+    .chat-side
+      .side-header
+        %p.side-header__username myname
+        %ul.user-menu
+          %li.user-menu__edit-user
+            = link_to "#" do
+              %i.fa.fa-edit
+          %li.user-menu__new-group
+            = link_to "#" do
+              %i.fa.fa-cog
+      .groups
+        = link_to "#" do
+          .group
+            %p.group__group-name group1
+            %p.group__latest-message 画像が投稿されています
+    .chat-main
+      .main-header
+        .current-group
+          %h2.current-group__name group2
+        %ul.member-list
+          member:
+          %li.member-list__member username2
+          %li.member-list__member username1
+        = link_to "#" do
+          .main-header__edit-btn Edit
+      .messages
+        .message
+          .upper-info
+            %p.upper-info__user username1
+            %p.upper-info__date 2019/04/19(Fri) 12:22:19
+          %p.message__text sumple message
+        .message
+          .upper-info
+            %p.upper-info__user username2
+            %p.upper-info__date 2019/04/19(Fri) 12:29:34
+        .form
+          %form{action="#", class="new-message", id="new_message", enctype="multipart/form-data", method="post"}
+            .input-box
+              %input{type="text", placeholder="type a message",name="message[content]" class="input-box__text", id="message_content"}
+              %label{for="message_image", class="image-label"}
+                %i.fa.fa-image
+              %input{type="submit", name="commit", value="Send", class="new-message__submit-btn", data-disable-with="Send"}
