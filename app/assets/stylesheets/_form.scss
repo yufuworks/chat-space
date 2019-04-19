@@ -12,7 +12,7 @@
 .input-box {
   position: relative;
   width: 100%;
-  .input-box__text {
+  &__text {
     height: 50px;
     width: 100%;
     padding: 0 40px 0 10px;
@@ -25,7 +25,7 @@
     top: 10px;
     right: 10px;
     cursor: pointer;
-    .image-label__input {
+    &__input {
       display: none;
     }
   }
