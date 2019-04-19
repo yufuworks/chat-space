@@ -1,0 +1,30 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 6px, 40px, 0px;
+  background-color: $color-white;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-top: 40px;
+    &__top {
+      display: flex;
+      flex-direction: row;
+      &__username {
+        color: $color-lgray;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__date {
+        @include font-gray;
+      }
+    }
+    &__message {
+      padding-top: 10px;
+      color: $color-lgray;
+      font-size: 14px;
+    } 
+  }
+}
