@@ -23,12 +23,14 @@
         %p.nav-bottom__group__status 画像が投稿されています
   .main
     .main__container
-      %p.main__container__username user2
-      %p.main__container__date 2019/04/10(Wed) 11:40:18
+      .main__container__top
+        %p.main__container__top__username user2
+        %p.main__container__top__date 2019/04/10(Wed) 11:40:18
       %p.main__container__message sumple chat
   .main__container
-      %p.main__container__username user1
-      %p.main__container__date 2019/04/10(Wed) 11:54:33
+      .main__container__top
+        %p.main__container__top__username user1
+        %p.main__container__top__date 2019/04/10(Wed) 11:54:33
       %p.main__container__message sumple message
   %footer
     %form#message-form{action: "#", method: "post", enctype: "multipart/from-data"}
