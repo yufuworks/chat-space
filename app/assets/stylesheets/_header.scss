@@ -1,0 +1,24 @@
+.header {
+  justify-content: space-between;
+  align-items: center;
+  border: solid ipx $border-color;
+  .continer{
+    align-self: flex-start;
+    p.header-title{
+      padding-top: 35px;
+      font: #333333;
+      font-size: 20px;
+    }  
+    p.header-caption{
+      @include font-gray;
+      padding-top: 15px;
+   }
+  }
+  .header-bottun{
+    align-self: flex-start;
+    height: 40px;
+    padding: auto, 20px;
+    margin-top: 28px;
+    color: $color-lbule;
+  }
+}
