@@ -21,10 +21,10 @@
       .main-header
         .current-group
           %h2.current-group__name group2
-        %ul.member-list
-          member:
-          %li.member-list__member username2
-          %li.member-list__member username1
+          %ul.member-list
+            member:
+            %li.member-list__member username2
+            %li.member-list__member username1
         = link_to "#" do
           .main-header__edit-btn Edit
       .messages
@@ -37,10 +37,10 @@
           .upper-info
             %p.upper-info__user username2
             %p.upper-info__date 2019/04/19(Fri) 12:29:34
-        .form
-          %form{action="#", class="new-message", id="new_message", enctype="multipart/form-data", method="post"}
-            .input-box
-              %input{type="text", placeholder="type a message",name="message[content]" class="input-box__text", id="message_content"}
-              %label{for="message_image", class="image-label"}
-                %i.fa.fa-image
-              %input{type="submit", name="commit", value="Send", class="new-message__submit-btn", data-disable-with="Send"}
+      .form
+        %form.new-message#new_message{action: "#", enctype: "multipart/form-data", method: "post"}
+          .input-box
+            %input.input-box__text#message_content{type: "text", placeholder: "type a message",name: "message[content]"}
+            %label.image-label{for: "message_image"}
+              %i.fa.fa-image
+          %input.new-message__submit-btn{type: "submit", name: "commit", value: "Send"}

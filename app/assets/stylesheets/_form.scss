@@ -1,0 +1,42 @@
+.form {
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  .new-message {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+
+.input-box {
+  position: relative;
+  width: 100%;
+  .input-box__text {
+    height: 50px;
+    width: 100%;
+    padding: 0 40px 0 10px;
+    color: $font-color-main;
+    border-style: none;
+  }
+  .image-label {
+    font-size: 1.3rem;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    .image-label__input {
+      display: none;
+    }
+  }
+}
+
+.new-message__submit-btn {
+  width: 100px;
+  height: 50px;
+  padding: 0 30px;
+  margin-left: 15px;
+  background-color: $bg-color-blue;
+  color: $font-color-white;
+  cursor: pointer;
+}
