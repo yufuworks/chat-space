@@ -13,7 +13,7 @@
             = link_to "#" do
               %i.fa.fa-cog
       .groups
-        = render :partial => "group"
+        = render partial: "group"
     .chat-main
       .main-header
         .current-group
@@ -25,7 +25,7 @@
         = link_to "#" do
           .main-header__edit-btn Edit
       .messages
-        = render :partial => "message"
+        = render partial: "message"
       .form
         %form.new-message#new_message{action: "#", enctype: "multipart/form-data", method: "post"}
           .input-box
