@@ -1,9 +1,19 @@
+.anounce {
+  align-self: flex-start;
+  width: 100vw;
+  background-color: $color-lbule;
+}
+
 .header {
-  justify-content: space-between;
+  display: flex;
   align-items: center;
   border: solid ipx $border-color;
+  widows: 100vw - 300px;
+  padding: auto, 40px;
   .continer{
     align-self: flex-start;
+    display: flex;
+    justify-content: space-between;
     p.header-title{
       padding-top: 35px;
       font: #333333;
@@ -14,7 +24,7 @@
       padding-top: 15px;
    }
   }
-  .header-bottun{
+  &-bottun{
     align-self: flex-start;
     height: 40px;
     padding: auto, 20px;

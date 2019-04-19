@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 300px;
+  padding: auto, 20px;
+  &-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: $color-ddblue;
+    #username {
+      @include font-white;
+      font-size: 16px;
+    }
+    &__buttons {
+      display: flex;
+      flex-direction: row-reverse;
+      #new-group-button {
+        align-self: flex-start;
+      }
+      #account-edit-button {
+        align-self: flex-start;
+      }
+    }
+  }
+  &-bottom {
+    justify-content: flex-start;
+    background-color: $color-dblue;
+    &__group {
+      &__name {
+        @include font-white;
+        padding-top: 20px;
+        font-size: 15px;
+      }
+      &__status {
+        @include font-white;
+        padding-top: 5px;
+        padding-bottom: 40px;
+        font-size: 11px;
+      }
+  }
+}
