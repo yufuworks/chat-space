@@ -1,20 +1,25 @@
 footer {
+  box-sizing: border-box;
   align-self: center;
   display: flex;
   flex-direction: row;
-  width: 100vw - 300px;
+  width: calc(100vw - 300px);
   #message-form {
+    box-sizing: border-box;
     height: 50px;
     #message-field {
+      box-sizing: border-box;
       align-self: center;
       padding: auto, 10px;
       color: $color-lgray;
       font-size: 16px;
     }
     #file-upload {
+      box-sizing: border-box;
       align-self: center;
     }
     #message-submit {
+      box-sizing: border-box;
       align-self: center;
       background-color: $color-lbule;
       padding-left: 15px;

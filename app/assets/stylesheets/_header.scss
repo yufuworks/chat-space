@@ -1,34 +1,57 @@
 .anounce {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
   align-self: flex-start;
   width: 100vw;
   background-color: $color-lbule;
+  p {
+    box-sizing: border-box;
+    align-self: flex-start;
+    margin: 0px, auto;
+    color: #ffffff;
+  }
 }
 
-.header {
-  display: flex;
+header {
+  box-sizing: border-box;
   align-items: center;
-  border: solid ipx $border-color;
-  widows: 100vw - 300px;
-  padding: auto, 40px;
-  .continer{
+  height: 100px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid 1px $border-color;
+  .continer {
+    box-sizing: border-box;
     align-self: flex-start;
     display: flex;
     justify-content: space-between;
-    p.header-title{
+    p.header-title {
+      box-sizing: border-box;
       padding-top: 35px;
       font: #333333;
       font-size: 20px;
     }  
-    p.header-caption{
+    p.header-caption {
+      box-sizing: border-box;
       @include font-gray;
       padding-top: 15px;
    }
   }
-  &-bottun{
+  .header-button {
+    box-sizing: border-box;
     align-self: flex-start;
+    justify-content: center;
     height: 40px;
+    width: 80px;
     padding: auto, 20px;
     margin-top: 28px;
     color: $color-lbule;
+    border: solid 1px $color-lbule;
+    p {
+      box-sizing: border-box;
+      align-self: center;
+    }
   }
 }
