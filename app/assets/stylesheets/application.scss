@@ -1,8 +1,10 @@
-@import "./reset";
+@import "reset";
+@import "config/property.scss";
 @import "font-awesome";
-@import "property.scss";
-@import "body.scss";
-@import "chat-side.scss";
-@import "main-header.scss";
-@import "messages.scss";
-@import "form.scss";
+@import "modules/body.scss";
+@import "modules/chat-side.scss";
+@import "modules/main-header.scss";
+@import "modules/messages.scss";
+@import "modules/form.scss";
+@import "modules/flash.scss";
+@import "user.scss";
