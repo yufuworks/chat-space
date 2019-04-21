@@ -56,6 +56,9 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-rails"
 gem "devise"
+gem "carrierwave"
+gem "mini_magick"
+gem "pry"
 
 group :development do 
      gem 'rspec'

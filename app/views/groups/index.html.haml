@@ -11,27 +11,9 @@
             = link_to new_group_path do
               %i.fa.fa-edit
           %li.user-menu__new-group
-            = link_to edit_user_path(current_user) do
+            = link_to edit_user_path(current_user.id) do
               %i.fa.fa-cog
       .groups
         - current_user.groups.each do |group|
           = render partial: "group", locals: {group: group}
-    .chat-main
-      .main-header
-        .current-group
-          %h2.current-group__name group2
-          %ul.member-list
-            member:
-            %li.member-list__member username2
-            %li.member-list__member username1
-        = link_to edit_group_path(current_user) do
-          .main-header__edit-btn Edit
-      .messages
-        = render partial: "message"
-      .form
-        %form.new-message#new_message{action: "#", enctype: "multipart/form-data", method: "post"}
-          .input-box
-            %input.input-box__text#message_content{type: "text", placeholder: "type a message",name: "message[content]"}
-            %label.image-label{for: "message_image"}
-              %i.fa.fa-image
-          %input.new-message__submit-btn{type: "submit", name: "commit", value: "Send"}
+    -# = render "chats/index"
