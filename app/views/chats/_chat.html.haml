@@ -1,0 +1,6 @@
+.message
+  .upper-info
+    %p.upper-info__user= chat.user.name
+    %p.upper-info__date= chat.created_at.strftime("%Y/%m/%d %H:%M")
+  %p.message__text= chat.message if true
+  = image_tag chat.image.to_s if true

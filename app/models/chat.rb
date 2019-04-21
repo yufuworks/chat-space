@@ -1,4 +1,8 @@
 class Chat < ApplicationRecord
-  belongs_to :user
+  mount_uploader :image, ImagesUploader
+
   belongs_to :group
+  belongs_to :user
+
+  validates :message, presence: true, unless: :image?
 end
