@@ -30,18 +30,10 @@
       .messages
         = render @chats
       .form
-        = form_for [@group, @chat], id: "new_message", remote: true do |f|
+        = form_for [@group, @chat], id: "new_message" ,html: {id: 'new_message'} do |f|
           .input-box
             = f.text_field :message, class: "input-box__text", id: "message_content", placeholder: "type a message"
             = f.label :image, class: "image-label" do
               %i.fa.fa-image
               = f.file_field :image, class: 'hidden'              
           = f.submit "Send", class: "new-message__submit-btn"
-      -# .form
-      -#   = form_for [@group, @chat], id: "new_message" do |f|
-      -#     = f.text_field :message, class: 'form__message', placeholder: 'type a message'
-      -#     .form__mask
-      -#       = f.label :image, class: 'form__mask__image' do
-      -#         = fa_icon 'picture-o', class: 'icon'
-      -#         = f.file_field :image, class: 'hidden'
-      -#     = f.submit 'Send', class: 'form__submit'
