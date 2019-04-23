@@ -9,6 +9,10 @@ class ChatsController < ApplicationController
   def create
     @chat = @group.chats.new(chat_params)
     if @chat.save
+      # respond_to do |format|
+      #   format.html { group_chats_path(group), notice: "メッセージを投稿しました" }
+      #   format.json
+      # end
       redirect_to group_chats_path(@group), notice: "メッセージを投稿しました"
     else
       @chats = @group.chats.includes(:user)
