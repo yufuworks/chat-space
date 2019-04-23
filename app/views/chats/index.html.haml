@@ -30,7 +30,7 @@
       .messages
         = render @chats
       .form
-        = form_for [@group, @chat] do |f|
+        = form_for [@group, @chat], id: "new_message" ,html: {id: 'new_message'} do |f|
           .input-box
             = f.text_field :message, class: "input-box__text", id: "message_content", placeholder: "type a message"
             = f.label :image, class: "image-label" do
