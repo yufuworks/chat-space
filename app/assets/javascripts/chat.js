@@ -6,19 +6,17 @@ function buildHTML(data){
                   <p class="upper-info__date">${data.created_at}</p>
                 </div>
                 <p class="message__text">${data.message}</p>`
-  if (data.image.url == null){
-    html = $(html).append(
+  data.image.url == null 
+  ? html = $(html).append(
               `</div>`
-  )} else {
-    html = $(html).append(
+  ) : html = $(html).append(
                 `<img src = '${data.image.url}'>
               </div>`
-  )}
+  )
   return html;
 }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
     var formData = new FormData($(this).get(0));
     $.ajax({
       url: window.location.href,
