@@ -38,6 +38,7 @@ function buildHTML(data){
     })
     .fail(function(){
       alert('メッセージを入力してください');
+      $('.new-message__submit-btn').removeAttr("disabled");
     })
   })
 })
