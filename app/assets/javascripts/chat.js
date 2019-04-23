@@ -37,7 +37,7 @@ function buildHTML(data){
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力してください');
     })
   })
 })
