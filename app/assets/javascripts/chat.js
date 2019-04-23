@@ -32,7 +32,7 @@ function buildHTML(data){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('#textboxmessage_content').val('')
+      $('#message_content').val('')
       $('.new-message__submit-btn').removeAttr("disabled");
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
