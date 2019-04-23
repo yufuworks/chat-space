@@ -1,5 +1,3 @@
 .chat-group-form
   %h1 新規チャットグループ
-  = yield :group_edit
-
-  -# = render '/users/index', locals: { group: @group }
+  = render partial: 'groupform', locals: { group: @group }
