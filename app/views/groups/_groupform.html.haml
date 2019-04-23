@@ -1,4 +1,4 @@
-= form_for @group, id: "edit_chat_group_22", class: "edit_chat_group", html:{method: "patch"} do |f|
+= form_for @group, id: "edit_chat_group_22", class: "edit_chat_group" do |f|
   - if @group.errors.any?
     .chat-group-form__errors
       %h2= "#{@group.errors.full_messages.count}件のエラーが発生しました。"
