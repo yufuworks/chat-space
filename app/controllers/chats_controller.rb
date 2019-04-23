@@ -4,7 +4,6 @@ class ChatsController < ApplicationController
   def index
     @chat = Chat.new
     @chats = @group.chats.includes(:user)
-
   end
 
   def create

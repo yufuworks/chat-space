@@ -16,4 +16,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 public/uploads/*
-/vendor
+public/images/*
+public/*
+vendor/bundle/*
+
+
