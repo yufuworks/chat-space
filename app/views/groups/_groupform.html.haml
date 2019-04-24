@@ -27,10 +27,14 @@
   -#   %p.chat-group-user__name seo_kyohei
 
   .chat-group-form__field.clearfix
-    .chat-group-form__field--left
-      = f.label :name, "チャットメンバー", class: "chat-group-form__label"
-    .chat-group-form__field--right
-      #chat-group-users
+    = f.fields_for :users, @group.users.build do |u|
+      .chat-group-form__field--left
+        = u.label :name, "チャットメンバー", class: "chat-group-form__label"
+      .chat-group-form__field--right
+        #chat-group-users
+          .chat-group-user.clearfix.js-chat-member{ id: "chat-group-user=-#{current_user.id}" }
+            = u.hidden_field :id, html:{ type: "hidden", value: current_user.id }
+            %p.chat-group-user__name= current_user.name
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
