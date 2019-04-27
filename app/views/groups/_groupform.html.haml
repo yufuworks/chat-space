@@ -1,3 +1,4 @@
+
 = form_for @group, id: "edit_chat_group_22", class: "edit_chat_group" do |f|
   - if @group.errors.any?
     .chat-group-form__errors
@@ -29,11 +30,11 @@
   .chat-group-form__field.clearfix
     = f.fields_for :users, @group.users.build do |u|
       .chat-group-form__field--left
-        = u.label :name, "チャットメンバー", class: "chat-group-form__label"
+        = f.label :name, "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         #chat-group-users
-          .chat-group-user.clearfix.js-chat-member{ id: "chat-group-user=-#{current_user.id}" }
-            = u.hidden_field :id, html:{ type: "hidden", value: current_user.id }
+          .chat-group-user.clearfix.js-chat-member{ id: "group_user_id_#{current_user.id}" }
+            = f.hidden_field :id, value: current_user.id, id: "group_users_id_#{current_user.id}"
             %p.chat-group-user__name= current_user.name
 
   .chat-group-form__field.clearfix
