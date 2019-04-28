@@ -19,5 +19,7 @@ public/uploads/*
 public/images/*
 public/*
 vendor/bundle/*
+*jpg
+*png
 
 

@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
+  repo_name = '#{repo_name}/#{repo_name}' unless repo_name.include?('/')
+  'https://github.com/#{repo_name}.git'
 end
 
 
@@ -38,7 +38,7 @@ gem 'jbuilder', '~> 2.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
-  gem "pry"
+  gem 'pry'
   gem 'pry-rails'
   gem 'rspec-rails', '~> 3.5'
   gem 'rails-controller-testing'
@@ -60,11 +60,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'haml-rails'
 gem 'erb2haml'
-gem "font-awesome-rails"
-gem "devise"
-gem "carrierwave"
-gem "mini_magick"
-gem "nested_form_fields"
+gem 'font-awesome-rails'
+gem 'devise'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'nested_form_fields'
+# gem 'trailblazer'
+# gem 'trailblazer-rails'
 
 group :production do 
   gem 'unicorn'

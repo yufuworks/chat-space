@@ -10,7 +10,7 @@ function appendUserAdd(user){
 
 function appendUserRemove(user){
   var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user.id}'>
-                <input name='group[user_id][${user.id}]' type='hidden' value='${user.id}'>
+                <input name='group[group_users_attributes][${user.id}][user_id]' type='hidden' value='${user.id}'>
                 <p class='chat-group-user__name'>${user.name}</p>
                 <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
               </div>`

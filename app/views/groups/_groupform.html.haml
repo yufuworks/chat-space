@@ -14,7 +14,7 @@
         = f.text_field :name, class: 'chat__group_name chat-group-form__input', placeholder: "グループ名を入力してください"
 
   .chat-group-form__field.clearfix
-    = f.fields_for :users, @group.users.build do |u|
+    = f.fields_for :users do |u|
       .chat-group-form__field--left
         = u.label :name, "チャットメンバーを追加", class: "chat-group-form__label"
       .chat-group-form__field--right
@@ -28,14 +28,15 @@
   -#   %p.chat-group-user__name seo_kyohei
 
   .chat-group-form__field.clearfix
-    = f.fields_for :users, @group.users.build do |u|
+    = f.fields_for :group_users do |u|
       .chat-group-form__field--left
-        = f.label :name, "チャットメンバー", class: "chat-group-form__label"
+        = u.label :name, "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         #chat-group-users
           .chat-group-user.clearfix.js-chat-member{ id: "group_user_id_#{current_user.id}" }
-            = f.hidden_field :id, value: current_user.id, id: "group_users_id_#{current_user.id}"
+            = u.hidden_field :user_id, value: current_user.id, id: "group_users_id_#{current_user.id}"
             %p.chat-group-user__name= current_user.name
+          -# @group のうちcurrent_userを除いたメンバーを表示させる
 
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
