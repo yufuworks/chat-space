@@ -42,7 +42,6 @@ function deleteSearchResult(){
   $("#user-search-field").on('keyup', function(e){
     e.preventDefault();
     const input = $.trim($("#user-search-field").val());
-    deleteSearchResult();
     $.ajax({
       type: 'GET',
       url: '/users',
@@ -53,8 +52,10 @@ function deleteSearchResult(){
     })
     .done(function(users) {
       if (input.length !== 0) {
+        deleteSearchResult();
         makeLists(users);
       } else {
+        deleteSearchResult();
         noResult();
       }
     })
