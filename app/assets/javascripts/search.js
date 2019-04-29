@@ -1,6 +1,7 @@
 $(document).on("turbolinks:load", function() {
+const userIds = $('.user_ids').val();
+
 function makeLists(users){
-  let userIds = $('.user_ids').val();
   users.forEach(function(user){
     if (userIds.includes(user.id)) {
       ;
