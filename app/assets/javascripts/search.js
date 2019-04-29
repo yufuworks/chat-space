@@ -1,7 +1,6 @@
 $(document).on("turbolinks:load", function() {
 function makeLists(users){
   let userIds = $('.user_ids').val();
-  let c = $("#chat-group-users").find('.chat-group-user__id');
   users.forEach(function(user){
     if (userIds.includes(user.id)) {
       ;
