@@ -59,11 +59,11 @@ function deleteSearchResult(){
     })
     .done(function(users) {
       console.log(users)
-      if (users.length !== 0) {
-        deleteSearchResult();
+      if (input.length !== 0) {
+        // deleteSearchResult();
         makeLists(users);
       } else {
-      noResult();
+        noResult();
       }
     })
     .fail(function() {
