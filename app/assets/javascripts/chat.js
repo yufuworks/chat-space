@@ -57,9 +57,7 @@ $(document).on("turbolinks:load", function() {
       data: {id: last_message_id}
     })
     .done(function(chats) {
-      console.log(chats);
       chats.forEach(function(chat){
-        console.log(chat);
         let html = buildHTML(chat);
         $('.messages').append(html);
       })
