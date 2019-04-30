@@ -1,6 +1,6 @@
 class Api::ChatsController < ApplicationController
   def index
-    latest_chats = Chat.where('id >= ?', params[:id]})
-    if latest_chats.present?
+    @chats = Chat.where("id > #{params[:id]}")
+    render 'index', formats: 'json', handlers: 'jbuilder'
   end
 end
