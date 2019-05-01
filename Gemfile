@@ -66,6 +66,6 @@ gem "carrierwave"
 gem "mini_magick"
 gem "nested_form_fields"
 
-group :production do 
-  gem "unicorn"
+group :production do
+  gem "unicorn", "5.4.1"
 end
