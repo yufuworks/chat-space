@@ -43,7 +43,7 @@ $(document).on("turbolinks:load", function() {
       scrollUnder();
     })
     .fail(function(){
-      alert('メッセージを入力してください');
+      alert('通信に失敗しました');
       $('.new-message__submit-btn').removeAttr("disabled");
     })
   })
