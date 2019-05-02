@@ -68,6 +68,7 @@ $(document).on("turbolinks:load", function() {
       $('.new-message__submit-btn').removeAttr("disabled");
     })
   })
-
-  setInterval(reloadMessages, 5000);
+  if ($(".messages").length) {
+    setInterval(reloadMessages, 5000);
+  }
 });

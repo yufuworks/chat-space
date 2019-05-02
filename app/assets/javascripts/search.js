@@ -39,6 +39,13 @@ $(document).on("turbolinks:load", function() {
     $("#user-search-result").empty();
   }
 
+  function makeUserInfo(target) {
+    let id = target.parent(".chat-group-user").attr("id").slice(16);
+    let name = target.siblings(".chat-group-user__name").text();
+    let user = {id: id, name: name};
+    return user;
+  }
+
   $("#user-search-field").on('keyup', function(e){
     e.preventDefault();
     const input = $.trim($("#user-search-field").val());
@@ -67,10 +74,8 @@ $(document).on("turbolinks:load", function() {
   $(".edit_group").click(function(e){
     const target = $(e.target);
     if (target.closest(".js-add-btn").length) {
-      let id = target.parent(".chat-group-user").attr("id").slice(16);
-      let name = target.siblings(".chat-group-user__name").text();
-      let user = {id: id, name: name};
       target.parent(".js-chat-member").remove();
+      let user = makeUserInfo(target);
       appendUserRemove(user);
     } else if (target.closest(".js-remove-btn").length) {
       target.parent(".js-chat-member").remove();
