@@ -1,5 +1,6 @@
-$(document).on("turbolinks:load", function() {
+$(function(){
   const groupId = $(".current-group").data("id");
+
   scrollUnder();
 
   function scrollUnder(){
@@ -9,10 +10,11 @@ $(document).on("turbolinks:load", function() {
   }
 
   function buildHTML(data){
+    let gmtJp = data.created_at.toLocaleString();
     let html = `<div class="message" data-id=${data.id}>
                   <div class="upper-info">
                     <p class="upper-info__user">${data.name}</p>
-                    <p class="upper-info__date">${data.created_at}</p>
+                    <p class="upper-info__date">${gmtJp}</p>
                   </div>
                   <p class="message__text">${data.message}</p>`
     data.image.url == null 
@@ -27,21 +29,26 @@ $(document).on("turbolinks:load", function() {
 
   function reloadMessages() {
     let last_message_id = $('.message:last').data('id');
-    $.ajax({
-      url: `/groups/${groupId}/api/chats`,
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(chats) {
-      chats.forEach(function(chat){
-        let html = buildHTML(chat);
-        $('.messages').append(html);
+    if (last_message_id != null) {
+      $.ajax({
+        url: `/groups/${groupId}/api/chats`,
+        type: 'get',
+        dataType: 'json',
+        data: {
+          id: last_message_id,
+          group_id: groupId
+        }
       })
-      if (chats.length !== 0) scrollUnder();
-    })
-    .fail(function() {
-    });
+      .done(function(chats) {
+        chats.forEach(function(chat){
+          let html = buildHTML(chat);
+          $('.messages').append(html);
+        })
+        if (chats.length !== 0) scrollUnder();
+      })
+      .fail(function() {
+      });
+    } 
   };
 
   $('#new_message').on('submit', function(e){
@@ -57,7 +64,7 @@ $(document).on("turbolinks:load", function() {
       disabled: false
     })
     .done(function(data){
-      var html = buildHTML(data);
+      let html = buildHTML(data);
       $('.messages').append(html);
       $("form")[0].reset();
       $('.new-message__submit-btn').removeAttr("disabled");
