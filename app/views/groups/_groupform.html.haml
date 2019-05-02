@@ -17,8 +17,6 @@
       %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバーを追加
     .chat-group-form__field--right
       .chat-group-form__search.clearfix
-        = hidden_field_tag :current_user_id, current_user.id, class: "current_user_id"
-        = hidden_field_tag :user_ids, @group.user_ids, class: "user_ids"
         %input.chat-group-form__input#user-search-field{ placeholder: "追加したいユーザー名を入力してください", type: "text"}
     .chat-group-form__field--right
       #user-search-result

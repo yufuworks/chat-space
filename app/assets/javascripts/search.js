@@ -1,9 +1,15 @@
 $(document).on("turbolinks:load", function() {
-  const userIds = $('.user_ids').val();
-
+  function makeNames(){
+    memberNames = $.makeArray($("p").map(function(i, element){
+      return element.innerHTML;
+    }));
+    return memberNames;
+  }
+  
   function makeLists(users){
     users.forEach(function(user){
-      if (userIds.includes(user.id)) {
+      memberNames = makeNames();
+      if (memberNames.includes(user.name)) {
         ;
       } else {
         appendUserAdd(user);
@@ -71,7 +77,7 @@ $(document).on("turbolinks:load", function() {
     })
   })
 
-  $(".edit_group").click(function(e){
+  $("form").click(function(e){
     const target = $(e.target);
     if (target.closest(".js-add-btn").length) {
       target.parent(".js-chat-member").remove();
