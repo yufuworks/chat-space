@@ -1,5 +1,4 @@
 %body
-  = javascript_include_tag 'chat.js'
   = render 'layouts/flash'
   = yield
   .wrapper
@@ -38,4 +37,3 @@
               %i.fa.fa-image
               = f.file_field :image, class: 'hidden'              
           = f.submit "Send", class: "new-message__submit-btn"
-  

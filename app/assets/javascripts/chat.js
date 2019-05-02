@@ -3,9 +3,7 @@ $(document).on("turbolinks:load", function() {
   scrollUnder();
 
   function scrollUnder(){
-    if ($(".messages") == true) {
-      $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 'fast');
-    }
+    $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 'fast');
   }
 
   function buildHTML(data){
