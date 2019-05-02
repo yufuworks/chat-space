@@ -1,7 +1,11 @@
-$(function(){
-  const groupId = $(".current-group").data("id");
+$(document).on("turbolinks:load", function() {
+  if ($(".messages").length) {
+    $(".messages").animate({scrollTop: $(".messages")[0].scrollHeight}, 'fast');
+  }
+  window.nowGroupId = $(".current-group").data("id");
+});
 
-  scrollUnder();
+$(function(){
 
   function scrollUnder(){
     if ($(".messages").length) {
@@ -10,11 +14,10 @@ $(function(){
   }
 
   function buildHTML(data){
-    let gmtJp = data.created_at.toLocaleString();
     let html = `<div class="message" data-id=${data.id}>
                   <div class="upper-info">
                     <p class="upper-info__user">${data.name}</p>
-                    <p class="upper-info__date">${gmtJp}</p>
+                    <p class="upper-info__date">${data.created_at}</p>
                   </div>
                   <p class="message__text">${data.message}</p>`
     data.image.url == null 
@@ -28,27 +31,29 @@ $(function(){
   }
 
   function reloadMessages() {
-    let last_message_id = $('.message:last').data('id');
-    if (last_message_id != null) {
+    let lastMessageId = $('.message:last').data('id');
+    if (lastMessageId != null) {
       $.ajax({
-        url: `/groups/${groupId}/api/chats`,
+        url: `/groups/${nowGroupId}/api/chats`,
         type: 'get',
         dataType: 'json',
         data: {
-          id: last_message_id,
-          group_id: groupId
+          id: lastMessageId,
+          group_id: nowGroupId
         }
       })
       .done(function(chats) {
         chats.forEach(function(chat){
-          let html = buildHTML(chat);
-          $('.messages').append(html);
+          if (chat.group_id == nowGroupId) {
+            let html = buildHTML(chat);
+            $('.messages').append(html);
+          }
         })
         if (chats.length !== 0) scrollUnder();
       })
       .fail(function() {
       });
-    } 
+    }
   };
 
   $('#new_message').on('submit', function(e){
