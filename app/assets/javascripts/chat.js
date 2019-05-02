@@ -25,6 +25,25 @@ $(document).on("turbolinks:load", function() {
     return html;
   }
 
+  function reloadMessages() {
+    let last_message_id = $('.message:last').data('id');
+    $.ajax({
+      url: `/groups/${groupId}/api/chats`,
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(chats) {
+      chats.forEach(function(chat){
+        let html = buildHTML(chat);
+        $('.messages').append(html);
+      })
+      if (chats.length !== 0) scrollUnder();
+    })
+    .fail(function() {
+    });
+  };
+
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData($(this).get(0));
@@ -50,23 +69,5 @@ $(document).on("turbolinks:load", function() {
     })
   })
 
-  function reloadMessages() {
-    let last_message_id = $('.message:last').data('id');
-    $.ajax({
-      url: `/groups/${groupId}/api/chats`,
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(chats) {
-      chats.forEach(function(chat){
-        let html = buildHTML(chat);
-        $('.messages').append(html);
-      })
-      if (chats.length !== 0) scrollUnder();
-    })
-    .fail(function() {
-    });
-  };
   setInterval(reloadMessages, 5000);
 });

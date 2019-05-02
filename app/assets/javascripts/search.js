@@ -1,43 +1,43 @@
 $(document).on("turbolinks:load", function() {
-const userIds = $('.user_ids').val();
+  const userIds = $('.user_ids').val();
 
-function makeLists(users){
-  users.forEach(function(user){
-    if (userIds.includes(user.id)) {
-      ;
-    } else {
-      appendUserAdd(user);
-    }
-  })
-}
+  function makeLists(users){
+    users.forEach(function(user){
+      if (userIds.includes(user.id)) {
+        ;
+      } else {
+        appendUserAdd(user);
+      }
+    })
+  }
 
-function appendUserAdd(user) {
-  let html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user.id}'>
-                  <p class='chat-group-user__name'>${user.name}</p>
-                  <div class='user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn'>追加</div>
+  function appendUserAdd(user) {
+    let html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user.id}'>
+                    <p class='chat-group-user__name'>${user.name}</p>
+                    <div class='user-search-add chat-group-user__btn chat-group-user__btn--add js-add-btn'>追加</div>
+                  </div>`
+    $("#user-search-result").append(html);
+  }
+
+  function appendUserRemove(user) {
+    let html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user.id}'>
+    <input name='group[user_ids][]' type='hidden' value='${user.id}' class="chat-group-user__id">
+    <p class='chat-group-user__name'>${user.name}</p>
+    <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
+    </div>`
+    $("#chat-group-users").append(html);
+  }
+
+  function noResult(){
+    let html = `<div class='chat-group-user clearfix js-chat-member>
+                  <p class='chat-group-user__name'>一致するユーザーはいません</p>
                 </div>`
-  $("#user-search-result").append(html);
-}
+    $("#user-search-result").append(html);
+  }
 
-function appendUserRemove(user) {
-  let html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-${user.id}'>
-  <input name='group[user_ids][]' type='hidden' value='${user.id}' class="chat-group-user__id">
-  <p class='chat-group-user__name'>${user.name}</p>
-  <div class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</div>
-  </div>`
-  $("#chat-group-users").append(html);
-}
-
-function noResult(){
-  let html = `<div class='chat-group-user clearfix js-chat-member>
-                <p class='chat-group-user__name'>一致するユーザーはいません</p>
-              </div>`
-  $("#user-search-result").append(html);
-}
-
-function deleteSearchResult(){
-  $("#user-search-result").empty();
-}
+  function deleteSearchResult(){
+    $("#user-search-result").empty();
+  }
 
   $("#user-search-field").on('keyup', function(e){
     e.preventDefault();
