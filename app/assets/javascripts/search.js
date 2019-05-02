@@ -64,7 +64,7 @@ function deleteSearchResult(){
     })
   })
 
-  $(document).click(function(e){
+  $(".edit_group").click(function(e){
     const target = $(e.target);
     if (target.closest(".js-add-btn").length) {
       let id = target.parent(".chat-group-user").attr("id").slice(16);
