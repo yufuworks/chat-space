@@ -11,7 +11,7 @@ class ChatsController < ApplicationController
     if @chat.save
       respond_to do |format|
         format.html { redirect_to group_chats_path(@group) }
-        format.json
+        format.json {}
       end
     else
       @chats = @group.chats.includes(:user)
